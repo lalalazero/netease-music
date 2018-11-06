@@ -9,6 +9,10 @@
 ul,ol {
     list-style: none;
 }
+body {
+    /*将body字体大小和页面宽带联系起来！实现等比缩放的关键*/
+    font-size: 4.2vw;
+}
 a{
     text-decoration: none;
 }
@@ -30,7 +34,7 @@ a{
     line-height: 7vw;
     border: 1px solid white;
     text-align: center;
-    font-size: 14px;
+    font-size: 3.7vw;
     border-radius: 3vw;
 }
 .tabs>ul {
@@ -105,7 +109,7 @@ a{
     background-image: linear-gradient(180deg,rgba(0,0,0,.2),transparent);
 }
 .tabContent .recommendMusic>ul>li p{
-    font-size: 13px;
+    font-size: 3.5vw;
     padding: 0vw 1.5vw;
     /*多行文字溢出*/
     display: -webkit-box;
@@ -189,7 +193,7 @@ a{
     color: #d43c33;
 }
 .art .copyright{
-    font-size: 0.1vw;
+    font-size: 3.2vw;
     padding-bottom: 5vw;
     transform: scale(0.75);
     color: rgb(136,136,136);
