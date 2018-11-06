@@ -64,21 +64,26 @@ a{
     left: -2vw;
     right: -2vw;
 }
-
-.tabContent h3{
+.tabContent>ul>li{
+    display: none;
+}
+.tabContent>ul>li.active{
+    display: block;
+}
+.playList h3{
     padding-left: 2vw;
     border-left: 2px solid #d43c33;
     font-weight: normal;
     font-size: 1.1em;
     margin: 4.5vw 0;
 }
-.tabContent .recommendMusic>ul{
+.playList .recommendMusic>ul{
     display: flex;
     flex-wrap: wrap;
 
 
 }
-.tabContent .recommendMusic>ul>li{
+.playList .recommendMusic>ul>li{
     width: calc(33.33% - 1vw);
     position: relative;
     margin-right: 1vw;
@@ -86,10 +91,10 @@ a{
     margin-bottom: 3vw;
     overflow: hidden;
 }
-.tabContent .recommendMusic>ul>li img{
+.playList .recommendMusic>ul>li img{
     width: 100%;
 }
-.tabContent .recommendMusic>ul>li .listenNumbers{
+.playList .recommendMusic>ul>li .listenNumbers{
     position: absolute;
     right: 0;
     top: 0;
@@ -99,7 +104,7 @@ a{
     padding-right: 1vw;
 }
 
-.tabContent .recommendMusic>ul>li::after{
+.playList .recommendMusic>ul>li::after{
     position: absolute;
     top: 0;
     right: 0;
@@ -109,7 +114,7 @@ a{
     width: 100%;
     background-image: linear-gradient(180deg,rgba(0,0,0,.2),transparent);
 }
-.tabContent .recommendMusic>ul>li p{
+.playList .recommendMusic>ul>li p{
     font-size: 3.5vw;
     padding: 0vw 1.5vw;
     /*多行文字溢出*/
@@ -118,7 +123,7 @@ a{
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-.tabContent .recommendMusic .listenNumbers svg.icon {
+.playList .recommendMusic .listenNumbers svg.icon {
     width: 3.5vw;
     height: 4.5vw;
     fill: white;
