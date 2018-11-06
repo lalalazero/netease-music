@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::before, *::after{
+    box-sizing: border-box;
+}
+ul,ol {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d43c33;
+    color: white;
+    padding: 5vw;
+}
+.topbar .topsvg{
+    width: 37vw;
+}
+.topbar .downloadApp{
+    color: white;
+    width: 20vw;
+    line-height: 7vw;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 3vw;
+}
+.tabs>ul {
+    display: flex;
+}
+
+.tabs li{
+    width: 33.33%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    font-size: 1em;
+}
+.tabs li.active{
+    color: #d43c33;
+}
+.tabs li>span{
+    position: relative;
+    line-height: 11.6vw;
+    height: 11.6vw;
+    display: inline-block;
+}
+.tabs li.active>span::before{
+    position: absolute;
+    content: '';
+    border-top: 2px solid #d43c33 ;
+    bottom: 0;
+    left: -2vw;
+    right: -2vw;
+}
+
+.tabContent h3{
+    padding-left: 2vw;
+    border-left: 2px solid #d43c33;
+    font-weight: normal;
+    font-size: 1.1em;
+    margin: 4.5vw 0;
+}
+.tabContent .recommendMusic>ul{
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+.tabContent .recommendMusic>ul>li{
+    width: calc(33.33% - 1vw);
+    position: relative;
+    margin-right: 1vw;
+    font-size: .5em;
+    margin-bottom: 3vw;
+}
+.tabContent .recommendMusic>ul>li img{
+    width: 100%;
+}
+.tabContent .recommendMusic>ul>li .listenNumbers{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    z-index: 1;
+    display: flex;
+    padding-right: 1vw;
+}
+
+.tabContent .recommendMusic>ul>li::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    display: block;
+    height: 5.3vw;
+    width: 100%;
+    background-image: linear-gradient(180deg,rgba(0,0,0,.2),transparent);
+}
+.tabContent .recommendMusic>ul>li p{
+    font-size: 13px;
+    padding: 0vw 1.5vw;
+    /*多行文字溢出*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.tabContent .recommendMusic svg.icon {
+    width: 13px;
+    height: 17px;
+    fill: white;
+}
+.latestMusic ul{
+    padding: 0 2vw;
+
+}
+.latestMusic li{
+    position: relative;
+    border-bottom: 1px solid #E2E2E3;
+    padding: 1vw 0;
+}
+.latestMusic li h4{
+    font-weight: normal;
+    font-size: .9em;
+    margin: .5vw 0;
+    /*单行文字溢出*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 12vw;
+}
+.latestMusic li p{
+    font-size: .4em;
+    color: #bbb;
+    /*单行文字溢出*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 12vw;
+
+}
+.latestMusic svg{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 5.9vw;
+    height: 5.9vw;
+    fill: #bbb;
+    transform: translate(-50%, -50%);
+}
+
+.art {
+    /*height: 54.33vw;*/
+    background:transparent url("./images/recommand_bg_2x.png") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.art .logo{
+    margin: 0 auto;
+    margin-top: 17.5vw;
+}
+.art .logosvg{
+    height: 11.7vw;
+    width: 61.3vw;
+
+}
+.art .footer{
+    width: 100%;
+}
+.art .openApp{
+    margin: 1vw 0;
+    display: inline-block;
+    width: 77vw;
+    height: 10.6vw;
+    line-height: 10.6vw;
+    border: 1px solid #d43c33;
+    border-radius: 5.3vw;
+    color: #d43c33;
+}
+.art .copyright{
+    font-size: 0.1vw;
+    padding-bottom: 5vw;
+    transform: scale(0.75);
+    color: rgb(136,136,136);
+}
