@@ -84,6 +84,7 @@ a{
     margin-right: 1vw;
     font-size: .5em;
     margin-bottom: 3vw;
+    overflow: hidden;
 }
 .tabContent .recommendMusic>ul>li img{
     width: 100%;
@@ -117,10 +118,30 @@ a{
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-.tabContent .recommendMusic svg.icon {
-    width: 13px;
-    height: 17px;
+.tabContent .recommendMusic .listenNumbers svg.icon {
+    width: 3.5vw;
+    height: 4.5vw;
     fill: white;
+}
+.huangguan {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+.huangguan-cover{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #e6e679;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    transform: rotate(-45deg);
 }
 .latestMusic ul{
     padding: 0 2vw;
