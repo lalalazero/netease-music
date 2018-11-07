@@ -116,7 +116,7 @@ a{
 }
 .playList .recommendMusic>ul>li p{
     font-size: 3.5vw;
-    padding: 0vw 1.5vw;
+    padding: .5vw 1.5vw;
     /*多行文字溢出*/
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -127,6 +127,9 @@ a{
     width: 3.5vw;
     height: 4.5vw;
     fill: white;
+}
+.playList .recommendMusic .listenNumbers span{
+    font-size: 3.2vw;
 }
 .huangguan {
     position: absolute;
@@ -159,7 +162,7 @@ a{
 }
 .latestMusic li h4{
     font-weight: normal;
-    font-size: .9em;
+    font-size: 1.1em;
     margin: .5vw 0;
     /*单行文字溢出*/
     white-space: nowrap;
@@ -168,7 +171,7 @@ a{
     padding-right: 12vw;
 }
 .latestMusic li p{
-    font-size: .4em;
+    font-size: .6em;
     color: #bbb;
     /*单行文字溢出*/
     white-space: nowrap;
