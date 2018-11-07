@@ -151,6 +151,17 @@ a{
     left: -20px;
     transform: rotate(-45deg);
 }
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.latestMusic {
+    display: none;
+}
+.latestMusic.active {
+    display: block;
+}
 .latestMusic ul{
     padding: 0 2vw;
 
@@ -158,26 +169,28 @@ a{
 .latestMusic li{
     position: relative;
     border-bottom: 1px solid #E2E2E3;
-    padding: 1vw 0;
+    padding: 1.2vw 0;
 }
 .latestMusic li h4{
-    font-weight: normal;
-    font-size: 1.1em;
+    font-size: 1.02em;
     margin: .5vw 0;
     /*单行文字溢出*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 12vw;
+    font-weight: 500;
 }
 .latestMusic li p{
     font-size: .6em;
-    color: #bbb;
+    color: #b3b3b3;
+    font-weight: 400;
     /*单行文字溢出*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 12vw;
+    /*text-shadow: 0px 0px 1px #ccc;*/
 
 }
 .latestMusic svg{
