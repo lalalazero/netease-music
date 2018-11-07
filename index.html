@@ -375,24 +375,63 @@
                     <!--第三个tab页面-搜索-->
                     <section class="search">
                         <div class="searchBar">
-                            <input type="text">
-                            <div class="resList">
-                                <ul>
-                                    <li>搜索结果 1</li>
-                                    <li>搜索结果 2</li>
-                                    <li>搜索结果 3</li>
-                                    <li>搜索结果 4</li>
-                                    <li>搜索结果 5</li>
-                                    <li>搜索结果 6</li>
-                                </ul>
+                            <div class="inputWrapper">
+                                <svg class="icon searchIcon">
+                                    <use xlink:href="#icon-search"></use>
+                                </svg>
+                                <form action="#" method="post">
+                                    <input id="search" name="search" type="text" placeholder="搜索歌曲、歌手、专辑">
+                                </form>
+                                <svg id="clearInputIcon" class="icon clearInput">
+                                    <use xlink:href="#icon-iconDeleteitem"></use>
+                                </svg>
                             </div>
                         </div>
                         <div>
-                            <div class="hotSearch">
-                                <div>
-                                    <span>热门搜索</span>
-                                </div>
-                                <div>
+                            <div class="suggestSearch">
+                                <h3>搜索123</h3>
+                                <ul>
+                                    <li>
+                                        <svg class="icon searchIcon">
+                                            <use xlink:href="#icon-search"></use>
+                                        </svg>
+                                        <p>搜索建议1</p>
+                                    </li>
+                                    <li>
+                                        <svg class="icon searchIcon">
+                                            <use xlink:href="#icon-search"></use>
+                                        </svg>
+                                        <p>搜索建议1搜索建议1搜索建议1搜索建议1搜索建议1搜索建议1</p>
+                                    </li>
+                                    <li>
+                                        <svg class="icon searchIcon">
+                                            <use xlink:href="#icon-search"></use>
+                                        </svg>
+                                        <p>搜索建议1</p>
+                                    </li>
+                                    <li>
+                                        <svg class="icon searchIcon">
+                                            <use xlink:href="#icon-search"></use>
+                                        </svg>
+                                        <p>搜索建议1</p>
+                                    </li>
+                                    <li>
+                                        <svg class="icon searchIcon">
+                                            <use xlink:href="#icon-search"></use>
+                                        </svg>
+                                        <p>搜索建议1</p>
+                                    </li>
+                                    <li>
+                                        <svg class="icon searchIcon">
+                                            <use xlink:href="#icon-search"></use>
+                                        </svg>
+                                        <p>搜索建议1</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="hotSearch" style="display: none">
+                                <h4>热门搜索</h4>
+                                <div class="hotItems">
                                     <span>吴亦凡新专辑</span>
                                     <span>justin黄明昊</span>
                                     <span>浪费</span>
@@ -404,32 +443,45 @@
                                     <span>金庸</span>
                                     <span>花粥</span>
                                 </div>
+                                <div class="history">
+                                    <ul>
+                                        <li>
+                                            <div>
+                                                <svg class="icon clock">
+                                                    <use xlink:href="#icon-Clock"></use>
+                                                </svg>
+                                            </div>
+                                            <p>吴亦凡新专辑</p>
+                                            <svg class="icon delete">
+                                                <use xlink:href="#icon-delete"></use>
+                                            </svg>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <svg class="icon clock">
+                                                    <use xlink:href="#icon-Clock"></use>
+                                                </svg>
+                                            </div>
+                                            <p>Ed Sheeran</p>
+                                            <svg class="icon delete">
+                                                <use xlink:href="#icon-delete"></use>
+                                            </svg>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <svg class="icon clock">
+                                                    <use xlink:href="#icon-Clock"></use>
+                                                </svg>
+                                            </div>
+                                            <p>华研词曲唱作人大赛</p>
+                                            <svg class="icon delete">
+                                                <use xlink:href="#icon-delete"></use>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="history">
-                                <ul>
-                                    <li>
-                                        <div>i</div>
-                                        <p>吴亦凡新专辑</p>
-                                        <svg class="delete">
-                                            <use></use>
-                                        </svg>
-                                    </li>
-                                    <li>
-                                        <div>i</div>
-                                        <p>Ed Sheeran</p>
-                                        <svg class="delete">
-                                            <use></use>
-                                        </svg>
-                                    </li>
-                                    <li>
-                                        <div></div>
-                                        <p>华研词曲唱作人大赛</p>
-                                        <svg class="delete">
-                                            <use></use>
-                                        </svg>
-                                    </li>
-                                </ul>
-                            </div>
+
 
 
                         </div>
@@ -443,7 +495,7 @@
 
 
     </div>
-    <script src="//at.alicdn.com/t/font_904998_sdaxkyaqabg.js"></script>
+    <script src="//at.alicdn.com/t/font_904998_wb9jywy3v1.js"></script>
     <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="./index.js"></script>
 </body>

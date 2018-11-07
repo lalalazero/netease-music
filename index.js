@@ -62,6 +62,17 @@ $(function () {
         })
     }
 
+    $('#search').on('input',function () {
+        if($(this).val().trim().length > 0){
+            document.querySelector('#clearInputIcon').classList.add('show');
+        }else {
+            document.querySelector('#clearInputIcon').classList.remove('show');
+        }
+
+    })
+
+
+
 
 
 })
