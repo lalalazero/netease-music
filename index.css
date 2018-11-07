@@ -102,7 +102,7 @@ a{
     color: white;
     z-index: 1;
     display: flex;
-    padding: 1vw;
+    padding: .5vw 1vw;
 }
 
 .playList .recommendMusic>ul>li::after{
