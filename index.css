@@ -175,6 +175,7 @@ a{
     padding: 1.2vw 0;
 }
 .musicList li h4{
+    color: #333;
     font-size: 1.02em;
     margin: .5vw 0;
     /*单行文字溢出*/
@@ -182,7 +183,7 @@ a{
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 12vw;
-    font-weight: 500;
+    font-weight: normal;
 }
 .musicList li p{
     font-size: .6em;
