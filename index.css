@@ -50,6 +50,7 @@ a{
 .tabs li.active{
     color: #d43c33;
 }
+
 .tabs li>span{
     position: relative;
     line-height: 11.6vw;
@@ -162,16 +163,16 @@ a{
 .latestMusic.active {
     display: block;
 }
-.latestMusic ul{
+.musicList{
     padding: 0 2vw;
 
 }
-.latestMusic li{
+.musicList li{
     position: relative;
     border-bottom: 1px solid #E2E2E3;
     padding: 1.2vw 0;
 }
-.latestMusic li h4{
+.musicList li h4{
     font-size: 1.02em;
     margin: .5vw 0;
     /*单行文字溢出*/
@@ -181,7 +182,7 @@ a{
     padding-right: 12vw;
     font-weight: 500;
 }
-.latestMusic li p{
+.musicList li p{
     font-size: .6em;
     color: #b3b3b3;
     font-weight: 400;
@@ -193,7 +194,7 @@ a{
     /*text-shadow: 0px 0px 1px #ccc;*/
 
 }
-.latestMusic svg{
+.musicList svg{
     position: absolute;
     right: 0;
     top: 50%;
@@ -240,3 +241,96 @@ a{
     transform: scale(0.75);
     color: rgb(136,136,136);
 }
+.hotList {
+    margin-top: -1px;
+    background-color:#eeebeb24;
+
+}
+.hottop {
+    background: url(./images/hot_music_bg_2x.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4.5vw 0;
+    position: relative;
+}
+.hottop>div {
+    width: 100%;
+    padding-left: 6vw;
+}
+.hottop .banner {
+    width: 150px;
+    height: 83px;
+    background: url(./images/index_icon_2x.png) no-repeat;
+    background-position: -27px -26px;
+    background-size: 166px 100px;
+}
+.hottop>span{
+    font-size: 12px;
+    padding-left: 6vw;
+    color: white;
+}
+
+/*.hottop::after{*/
+    /*content:'';*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left:0;*/
+    /*right:0;*/
+    /*bottom: 0;*/
+    /*background-color: rgba(0,0,0,.1);*/
+/*}*/
+
+
+
+.hotList .musicList {
+    display: none;
+}
+.hotList .musicList.active {
+    display: block;
+}
+.hotList .musicList>li{
+    padding-left: 9vw;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.hotList .musicList>li p{
+    padding-bottom: 1.2vw;
+    border-bottom: 1px solid #E2E2E3;
+}
+
+.hotList .musicList>li>span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    font-size: 1.1em;
+    color: #b3b3b3;
+    font-weight: 500;
+}
+.hotList .musicList>li:nth-child(1)>span{
+    color: #d43c33;
+}
+.hotList .musicList>li:nth-child(2)>span{
+    color: #d43c33;
+}
+.hotList .musicList>li:nth-child(3)>span{
+    color: #d43c33;
+}
+
+.hotList .loading{
+    margin: 40vw 0;
+}
+
+.hotList .footer{
+    padding: 4vw 0;
+    text-align: center;
+}
+.hotList .footer>a{
+    color: #bbb;
+}
+
+
+
