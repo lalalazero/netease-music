@@ -194,7 +194,7 @@ a{
     /*text-shadow: 0px 0px 1px #ccc;*/
 
 }
-.musicList svg{
+.musicList>li>svg{
     position: absolute;
     right: 0;
     top: 50%;
@@ -330,6 +330,13 @@ a{
 }
 .hotList .footer>a{
     color: #bbb;
+}
+
+.sq_icon {
+    width: 5.3vw;
+    height: 4vw;
+    fill: red;
+    vertical-align: middle;
 }
 
 

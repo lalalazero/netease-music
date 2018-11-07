@@ -27,6 +27,10 @@ $(function () {
                 $li.find('h4').text(res['name']);
                 var s = res['singer'] + '-' + res['album'];
                 $li.find('p').text(s);
+                if(res['sq'] === 1){
+                    var icon = '<svg class="icon sq_icon"><use xlink:href="#icon-ttpodicon"></use></svg>';
+                    $li.find('p').prepend(icon);
+                }
             })
 
             $('.playList .loading').remove();
@@ -45,6 +49,11 @@ $(function () {
                 $li.find('h4').text(value['name']);
                 var s = value['singer'] + '-' + value['album'];
                 $li.find('p').text(s);
+                if(value['sq'] === 1){
+                    var icon = '<svg class="icon sq_icon"><use xlink:href="#icon-ttpodicon"></use></svg>';
+                    $li.find('p').prepend(icon);
+                }
+
             })
             $ul.attr('dataLoaded','yes');
             $('.hotList .loading').remove();
