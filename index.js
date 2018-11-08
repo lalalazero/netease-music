@@ -62,14 +62,43 @@ $(function () {
         })
     }
 
+    $('#clearInputIcon').on('click',function () {
+        $('#search').val('');
+        hideSearchSuggestions();
+    })
+
     $('#search').on('input',function () {
+
         if($(this).val().trim().length > 0){
-            document.querySelector('#clearInputIcon').classList.add('show');
+            hiddeHotSearch();
+            $('.suggestSearch>h3').text('搜索"' + $(this).val().trim() + '"');
+            showSearchSuggestions();
+
         }else {
-            document.querySelector('#clearInputIcon').classList.remove('show');
+            hideSearchSuggestions();
+            showHotSearch();
         }
 
     })
+
+    function showSearchSuggestions() {
+        $('.suggestSearch').addClass('show');
+        document.querySelector('#clearInputIcon').classList.add('show');
+
+    }
+
+    function hideSearchSuggestions() {
+        $('.suggestSearch').removeClass('show');
+        $('.suggestSearch>h3').text('搜索');
+        document.querySelector('#clearInputIcon').classList.remove('show');
+    }
+
+    function showHotSearch() {
+        $('.hotSearch').removeClass('hide');
+    }
+    function hiddeHotSearch() {
+        $('.hotSearch').addClass('hide');
+    }
 
 
 

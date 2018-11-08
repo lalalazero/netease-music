@@ -387,8 +387,12 @@ a{
 .searchBar .clearInput.show{
     display: initial;
 }
-
-
+.suggestSearch {
+    display: none;
+}
+.suggestSearch.show {
+    display: block;
+}
 .suggestSearch>ul>li {
     position: relative;
 }
@@ -418,6 +422,67 @@ a{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+
+.hotSearch.hide{
+    display: none;
+}
+
+.history>ul>li{
+    position: relative;
+}
+.history svg.icon{
+    position: absolute;
+}
+.history .clock{
+    height: 5vw;
+    width: 5vw;
+    left: 4vw;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    fill: #ccc;
+}
+.history .delete{
+    height: 4vw;
+    width: 4vw;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    fill: #333;
+}
+.history>ul>li>p{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-left: 9vw;
+    padding: 2.5vw 0;
+    padding-right: 8.5vw;
+    /*单行文字溢出*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .85em;
+}
+.hotSearch>h4{
+    font-size: .8em;
+    padding-left: 3vw;
+    font-weight: normal;
+    padding-top: 3vw;
+    padding-bottom: 1vw;
+    color: #666;
+}
+.hotItems{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vw 2vw;
+}
+.hotItems>span{
+    line-height: 7vw;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 1vw 3.5vw;
+    border-radius: 4.5vw;
+    font-size: .9em;
+    margin-right: 3vw;
+    margin-bottom: 2vw;
 }
 
 
