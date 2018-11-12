@@ -1,6 +1,9 @@
 $(function () {
 
-    var historySearch = [];
+    var historySearch = ['自己','情','花儿'];
+    if(historySearch.length > 0){
+        showHistorySearch();
+    }
     loadLatestMusic();
 
     $('.tabs  li').on('click',function (e) {
@@ -65,35 +68,63 @@ $(function () {
 
     $('#form').on('submit',function () {
         this.preventDefault();
+        console.log('submit event1');
     })
 
     $('#clearInputIcon').on('click',function () {
         $('#search').val('');
+        clearTimeout(timer);
         hideSearchSuggestions();
+        showHotSearch();
+        showHistorySearch();
     })
 
+    let timer = undefined;
+    
+    // 监听输入框的回车事件
+    $('#search').on('keydown',function (e) {
+        if(e.keyCode === 13){
+            e.preventDefault();
+            var keyword = $(this).val();
+            addToHistory(keyword);
+            throttle(keyword);
+        }
+    })
     $('#search').on('input',function () {
          var keyword = $(this).val().trim();
         if(keyword.length > 0){
-
             document.querySelector('#clearInputIcon').classList.add('show');
             hiddeHotSearch();
             $('.suggestSearch>h3').text('搜索"' + keyword + '"');
-            // 函数节流控制
-            addToHistory(keyword);
-            searchSongs(keyword).then((res)=>{
-                showSearchSuggestions(res);
-            });
+            $('.suggestSearch>ul').empty();
+            $('.suggestSearch').addClass('show');
+
+            // 函数节流 or 函数防抖 控制
+            throttle(keyword);
 
         }else {
+            clearTimeout(timer);
             document.querySelector('#clearInputIcon').classList.remove('show');
             hideSearchSuggestions();
             showHotSearch();
+            showHistorySearch();
         }
 
     })
 
-
+    function throttle(keyword) {
+        if(timer !== undefined){
+            clearTimeout(timer);
+        }
+        // 函数节流 or 函数防抖 控制
+        timer = setTimeout(function(){
+            searchSongs(keyword).then((res)=>{
+                timer = undefined;
+                showSearchSuggestions(res);
+            });
+        },1000);
+    }
+    
     function showSearchSuggestions(res) {
         $('.suggestSearch>ul').empty();
         if(res.length > 0){
@@ -104,21 +135,22 @@ $(function () {
                 $li.find('p').text(value.name);
                 $('.suggestSearch>ul').append($li);
             })
+            $('.suggestSearch>ul').addClass('show');
         }
-        $('.suggestSearch').addClass('show');
+
 
 
     }
 
     function hideSearchSuggestions() {
         $('.suggestSearch>ul').empty();
-        $('.suggestSearch').removeClass('show');
         $('.suggestSearch>h3').text('搜索');
+        $('.suggestSearch').removeClass('show');
+        $('.suggestSearch>ul').removeClass('show');
 
     }
 
     function showHotSearch() {
-        makeHistorySearch();
         $('.hotSearch').removeClass('hide');
     }
     function hiddeHotSearch() {
@@ -126,28 +158,35 @@ $(function () {
     }
 
     function addToHistory(keyword) {
-        // 如果原来搜索过该关键字，把它删掉再重新插入到数组最后，保证最新的搜索总是在最后
-        var index = historySearch.find(function (value) {
-            return value.indexOf(keyword) >= 0
+        // 如果原来搜索过该关键字，把它删掉再重新插入到数组最前，保证最新的搜索总是在最前
+        var index = historySearch.findIndex(function (item) {
+            return item.indexOf(keyword) >= 0;
         })
-        if(index !== undefined && index !== historySearch.length - 1){
-            historySearch.splice(index, 1);
-            historySearch.push(keyword);
+        if(index !== -1){
+            if(index !== 0){
+                historySearch.splice(index,1);
+                historySearch.splice(0,0,keyword);
+            }
         }else{
-            // 新的关键字直接push到数组最后
-            historySearch.push(keyword);
+            // 新的关键字直接插入到数组最前面
+            historySearch.splice(0,0,keyword);
+        }
+        // 限制搜索历史最多只有5个
+        if(historySearch.length > 5){
+            historySearch = historySearch.splice(0,5);
         }
 
     }
-    function makeHistorySearch() {
+
+    function showHistorySearch() {
         $('.history>ul').empty();
         historySearch.forEach(function (value) {
             var $li = $('<li><svg class="icon clock"><use xlink:href="#icon-Clock"></use></svg>' +
                 '<p>吴亦凡新专辑</p><svg class="icon delete"><use xlink:href="#icon-delete"></use></svg></li>');
             $li.find('p').text(value);
-            // 倒序插入，显示最近的搜索在最前
-            $('.history>ul').prepend($li);
+            $('.history>ul').append($li);
         })
+        $('.history').removeClass('hide');
     }
 
 
@@ -191,10 +230,17 @@ $(function () {
             resolve(result);
         }), (Math.random()*1000 + 1000)}
 
-
         );
 
     }
+
+    $('.history').on('click','svg',function (e) {
+        var index = $(e.target).parent().index();
+        console.log(index);
+        historySearch.splice(index,1);
+        $(e.target).parent().remove();
+        console.log(historySearch);
+    })
 
 
 

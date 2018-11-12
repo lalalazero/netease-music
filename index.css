@@ -393,6 +393,12 @@ a{
 .suggestSearch.show {
     display: block;
 }
+.suggestSearch>ul{
+    display: none;
+}
+.suggestSearch>ul.show{
+    display: block;
+}
 .suggestSearch>ul>li {
     position: relative;
 }
@@ -428,7 +434,9 @@ a{
 .hotSearch.hide{
     display: none;
 }
-
+.history.hide{
+    display: none;
+}
 .history>ul>li{
     position: relative;
 }
