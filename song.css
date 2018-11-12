@@ -98,13 +98,14 @@
     overflow: hidden;
 }
 .lyrics>h3 {
-    font-size: 6vw;
+    font-size: 4.5vw;
     color: white;
     padding: 1vw 0;
     line-height: 6vw;
 }
 .lyrics>p{
     height:calc((100% - 6vw)/3);
+    font-size: .8em;
 }
 
 .links{

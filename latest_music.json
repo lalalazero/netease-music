@@ -1,5 +1,11 @@
 [
   {
+    "name":"沙漠骆驼",
+    "singer":"展展与罗罗",
+    "album":"沙漠骆驼",
+    "sq": 1
+  },
+  {
     "name":"Somebody To Love",
     "singer":"Troye Sivan",
     "album":"Somebody To Love",
@@ -52,11 +58,5 @@
     "singer":"Martin Garrix / Mike Yung",
     "album":"Dreamer",
     "sq": 0
-  },
-  {
-    "name":"The Fire",
-    "singer":"杰克隽逸",
-    "album":"The Fire",
-    "sq": 1
   }
 ]

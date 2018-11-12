@@ -26,8 +26,15 @@ $(function () {
         if($ul.attr('dataLoaded') === 'yes'){ return;}
 
         $.get('./latest_music.json').done(function (result) {
-            result.map(function (res,index) {
-                var $li = $ul.children().eq(index);
+            result.map(function (res) {
+                var $li = $('<li>\n' +
+                    '<svg class="icon">\n' +
+                    ' <use xlink:href="#icon-play"></use>\n' +
+                    ' </svg>\n' +
+                    ' <h4>歌曲名 1</h4>\n' +
+                    ' <p>歌手1 - 专辑1</p>\n' +
+                    ' </li>');
+                //var $li = $ul.children().eq(index);
                 $li.find('h4').text(res['name']);
                 var s = res['singer'] + '-' + res['album'];
                 $li.find('p').text(s);
@@ -35,6 +42,7 @@ $(function () {
                     var icon = '<svg class="icon sq_icon"><use xlink:href="#icon-ttpodicon"></use></svg>';
                     $li.find('p').prepend(icon);
                 }
+                $ul.append($li);
             })
 
             $('.playList .loading').remove();
@@ -42,6 +50,12 @@ $(function () {
             $ul.attr('dataLoaded','yes');
         })
     }
+
+    $('.latestMusic>ul').on('click','li',function (e) {
+        var index = $(this).index();
+        // console.log(index);
+        location.href = './song.html?id=' + index;
+    })
     // 获取热歌榜
     function loadHotMusic() {
         var $ul = $('.hotList .musicList');
