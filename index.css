@@ -470,6 +470,9 @@ a{
     padding-bottom: 1vw;
     color: #666;
 }
+.suggestSearch>ul {
+}
+
 .hotItems{
     display: flex;
     flex-wrap: wrap;
