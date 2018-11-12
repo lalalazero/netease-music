@@ -91,21 +91,37 @@
 .disc.active .cover{
     animation-play-state: running;
 }
-.lyrics{
+.song-desc{
     text-align: center;
-    margin-top: 19vw;
+    margin-top: 15vw;
     height: 24vw;
     overflow: hidden;
 }
-.lyrics>h3 {
-    font-size: 4.5vw;
+.song-desc .name{
     color: white;
+}
+.song-desc>h3 {
+    font-size: 4.5vw;
+    color: gray;
     padding: 1vw 0;
     line-height: 6vw;
 }
-.lyrics>p{
-    height:calc((100% - 6vw)/3);
-    font-size: .8em;
+.song-desc .lyric{
+    height: 18vw;
+    overflow: hidden;
+}
+.song-desc .lines{
+    transition: transform .3s;
+
+}
+.song-desc .lines>p{
+    color: gray;
+    font-size: 1em;
+    height: 6vw;
+    line-height: 6vw;
+}
+.song-desc .lines>p.active{
+    color: white;
 }
 
 .links{
