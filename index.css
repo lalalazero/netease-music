@@ -446,7 +446,7 @@ a{
 .history .delete{
     height: 4vw;
     width: 4vw;
-    right: 0;
+    right: 1.5vw;
     top: 50%;
     transform: translate(-50%,-50%);
     fill: #333;
