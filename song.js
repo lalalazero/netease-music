@@ -29,7 +29,6 @@ $(function () {
             audio.play();
         });
 
-        // TODO 检测歌词滑动
         setInterval(function () {
             let seconds = audio.currentTime;
             let minutes = ~~(seconds / 60);
