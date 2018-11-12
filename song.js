@@ -5,7 +5,6 @@ $(function () {
     $.get('./songs.json').done(function (res) {
         var obj = res[index];
         initPlayer(obj);
-        initText(obj);
     })
 
     function initPlayer(obj) {
@@ -15,11 +14,9 @@ $(function () {
         var audio = document.createElement('audio');
         audio.src = obj['mp3'];
 
+
         audio.oncanplay = function () {
-            // alert('can play');
-            // $('.disc').addClass('active');
-            // audio.play();
-            console.log('can play');
+            initText(obj); // 避免文字加载太快很尴尬...
         }
 
         $('.icon-pause').on('touchstart',function(){

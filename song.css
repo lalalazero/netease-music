@@ -14,7 +14,7 @@
 
 .page {
     width: 100vw;
-    background: transparent url("images/background.jpg") no-repeat center;
+    background: transparent no-repeat center;
     background-size: cover;
     height: 100vh;
     position: relative;
