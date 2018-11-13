@@ -18,6 +18,10 @@
     background-size: cover;
     height: 100vh;
     position: relative;
+    overflow: scroll;
+}
+.page .content{
+
 }
 .disc-container {
     text-align: center;
@@ -25,6 +29,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.m-logo {
+    width: 25vw;
+    position: absolute;
+    left: 3vw;
+    top: 3vw;
 }
 .disc-container .needle {
     width: 26vw;
@@ -105,9 +115,10 @@
     color: gray;
     padding: 1vw 0;
     line-height: 6vw;
+    margin: 2vw 0;
 }
 .song-desc .lyric{
-    height: 18vw;
+    height: 7vw;
     overflow: hidden;
 }
 .song-desc .lines{
